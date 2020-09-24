@@ -43,5 +43,5 @@ dengan URL berisi value. @PathVariable juga memudahkan user untuk melakukan navi
 tertentu. 
 ---
 ### What I did not understand
-[] Implementasi dan cara kerja Maven
-[] Detail cara kerja spring boot dan implementasinya di Github
+- [] Implementasi dan cara kerja Maven
+- [] Detail cara kerja spring boot dan implementasinya di Github
