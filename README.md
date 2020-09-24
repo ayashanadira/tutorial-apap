@@ -38,7 +38,7 @@ dan transaction management.
 @PathVariable?**
 @RequestParam digunakan untuk mendapatkan suatu value dari form data dan secara otomatis meng-assign value 
 tersebut ke parameter dalam suatu method. @PathVariable digunakan untuk mendapatkan suatu value dari URL. 
-@RequestParam cocok untuk web dengan proses query atau searching.@PathVariable cocok digunakan bagi web 
+@RequestParam cocok untuk web dengan query atau searching.@PathVariable cocok digunakan bagi web 
 dengan URL berisi value. @PathVariable juga memudahkan user untuk melakukan navigasi ke suatu page web 
 tertentu. 
 ---
