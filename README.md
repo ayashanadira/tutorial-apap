@@ -15,11 +15,12 @@ diselesaikan issues adalah bugs, proses pull request, dan lainnya.
 Perbedaan antara git merge dan git merge squash terletak pada commit. Pada git merge biasa, commit pada 
 branch akan ditambahkan ke master/branch tujuan tanpa mengubah commit branch. Sementara pada git merge 
 squash, commit yang ada pada branch akan dikombinasikan menjadi satu commit pada master/tujuan.
-**3. Apa keunggulan menggunakan Version Control System seperti Git dalam pengembangan suatu aplikasi? **
+**3. Apa keunggulan menggunakan Version Control System seperti Git dalam pengembangan suatu aplikasi?**
 Git mendukung kolaborasi dan kerjasama antar developer dalam pengerjaan proyek karena masing-masing 
 developer dapat mengetahui siapa saja dan apa saja kode yang diubah oleh developer lainnya. Dengan 
 menggunakan git, seluruh versi source code dapat disimpan dan dapat berkontribusi pada proyek yang bersifat 
 open-source.
+
 ### Spring
 **4. Apa itu library & dependency?**
 Library adalah kumpulan kode program atau method yang fokus pada task tertentu. Library dapat digunakan 
