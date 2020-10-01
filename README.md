@@ -31,13 +31,22 @@ Spring dapat digunakan untuk pengembangan aplikasi enterprise, aplikasi terkait 
 
 ## Tutorial 2
 **1. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom&noTelepon=081xxx​Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi**
+
 Muncul Whitelabel Error Page Service Error 500. Hal tersebut terjadi karena file HTML untuk add-hotel belum dibuat. Error tersebut diakibatkan karena method addHotel yang dipanggil oleh url /hotel/add tidak bisa melakukan return "add-hotel" karena belum ada template add-hotel. 
+
 **2. Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa?Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat?**
-Autowired merupakan implementasi dari konsep dependency injection. Pada class HotelController, @Autowired akan mengatasi persoalan terkait dependecy injection. @Autowired juga akan melakukan inisialisasi terhadap class HotelController seperti constructor, setter, dan getter melalui injection.  
+
+Autowired merupakan implementasi dari konsep dependency injection. Pada class HotelController, @Autowired akan mengatasi persoalan terkait dependecy injection. @Autowired juga akan melakukan inisialisasi terhadap class HotelController seperti constructor, setter, dan getter melalui injection.
+
 **3. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20FasilkomApa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.**
+
 Hotel tidak akan bisa ditambahkan dan akan muncul page error dengan status Bad Request 400. Hal tersebut karena pada link di pertanyaan nomor 3, tidak ada parameter nomor telepon. Parameter nomor telepon tersebut merupakan parameter yang sifatnya required pada RequestParam untuk "noTelepon" dan nomor telepon merupakan atribut yang wajib ada untuk construct objek HotelModel. 
+
 **4. Jika Papa APAP ingin melihat Hotel dengan nama Papa APAP,link apa yang harus diakses?**
-http://localhost:8080/hotel/view?idHotel=1
+
+http://localhost:8080/hotel/view?idHotel=1 dengan mengganti angka '1' pada link menjadi id Hotel Papa APAP.
+Jika kita tidak mengetahui id Hotel dan hanya nama hotelnya saja, maka kode untuk method detailHotel dapat ditambahkan RequestParam untuk nama Hotel dan menambahkan parameter required=false untuk RequestParam idHotel. Linknya hotel Papa APAP menjadi berikut : http://localhost:8080/hotel/view?namaHotel=Papa APAP
+
 **5. Tambahkan 1 contoh Hotel lainnya sesukamu.Lalu cobalah untuk mengakses http://localhost:8080/hotel/viewall​ ,apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.**
 Pada page tersebut akan ditampilkan seluruh daftar dan informasi hotel yang sebelumnya telah di-add. 
 ![image](https://user-images.githubusercontent.com/45852173/94810293-0ab38800-041e-11eb-89bf-ce1f8a919d3c.png)
