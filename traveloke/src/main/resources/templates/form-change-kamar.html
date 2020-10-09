@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Change Kamar</title>
+</head>
+<body>
+<h3>Change Data Kamar</h3>
+<form th:action="@{/kamar/change}" th:object="${kamar}" method="POST">
+    <input type="hidden" th:field="*{noKamar}"/>
+    Nama Kamar: <br>
+    <input type="text" name="namaKamar" th:value="*{namaKamar}"/>
+    <br><br>
+    Tipe : <br>
+    <input type="text" name="tipe" th:value="*{tipe}"/>
+    <br><br>
+    Kapasitas kamar: <br>
+    <input type="number" name="kapasitasKamar" th:value="*{kapasitasKamar}"/>
+    <br><br>
+    Hotel : <br>
+    <input type="number" name="hotel" th:value="*{hotel}"/>
+    <br><br>
+
+    <button type="submit" value="submit">Submit</button>
+</form>
+</body>
+</html>
