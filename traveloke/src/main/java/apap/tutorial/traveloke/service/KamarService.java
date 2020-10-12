@@ -11,4 +11,5 @@ public interface KamarService {
     KamarModel updateKamar(KamarModel kamar);
     KamarModel getKamarByNoKamar(Long noKamar);
     void deleteKamar(KamarModel kamar);
+    List<KamarModel> getKamarByNamaKamarDanTipe(List<KamarModel> listKamar);
 }

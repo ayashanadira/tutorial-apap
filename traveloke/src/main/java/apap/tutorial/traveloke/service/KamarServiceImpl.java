@@ -16,6 +16,8 @@ public class KamarServiceImpl implements KamarService{
     @Autowired
     KamarDb kamarDb;
 
+    List<KamarModel> listKamarFound;
+
     @Override
     public void addKamar(KamarModel kamar){
         kamarDb.save(kamar);
@@ -52,6 +54,19 @@ public class KamarServiceImpl implements KamarService{
     public void deleteKamar(KamarModel kamar){
         KamarModel targetKamar = kamarDb.findByNoKamar(kamar.getNoKamar()).get();
         kamarDb.delete(targetKamar);
+    }
+
+    @Override
+    public List<KamarModel> getKamarByNamaKamarDanTipe(List<KamarModel> listKamar){
+        for(KamarModel kamar :listKamar){
+            KamarModel kamarFoundByTipe = kamarDb.findByTipe(kamar.getTipe()).get();
+            KamarModel kamarFoundByNamaKamar = kamarDb.findByNamaKamar(kamar.getNamaKamar()).get();
+            if (kamarFoundByNamaKamar.equals(kamarFoundByTipe)){
+                listKamarFound.add(kamarFoundByTipe);
+            }
+        }
+        return listKamarFound;
+
     }
 
 
