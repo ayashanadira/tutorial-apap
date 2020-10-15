@@ -5,7 +5,12 @@
     <title>Hotel Not Found</title>
 </head>
 <body>
+
+<h2 th:text="'Hotel tidak dapat ditemukan. Proses dibatalkan'"></h2>
+<a href="/">Kembali</a>
+
 <h2 th:text="'Hotel dengan id ' + ${idHotel} + ' tidak dapat ditemukan. Proses dibatalkan'"></h2>
 <a href="/hotel/viewall">Kembali</a>
+
 </body>
 </html>
