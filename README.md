@@ -44,25 +44,11 @@ Spring dapat digunakan untuk pengembangan aplikasi enterprise, aplikasi terkait 
 [] Detail cara kerja spring boot dan implementasinya di Github
 
 ---
-## Tutorial 2
----
-**1. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom&noTelepon=081xxx​Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi**
-
-Muncul Whitelabel Error Page Service Error 500. Hal tersebut terjadi karena file HTML untuk add-hotel belum dibuat. Error tersebut diakibatkan karena method addHotel yang dipanggil oleh url /hotel/add tidak bisa melakukan return "add-hotel" karena belum ada template add-hotel.
-=======
-
-@RequestParam digunakan untuk mendapatkan suatu value dari form data dan secara otomatis meng-assign value tersebut ke parameter dalam suatu method. @PathVariable digunakan untuk mendapatkan suatu value dari URL. @RequestParam cocok untuk web dengan proses query atau searching.@PathVariable cocok digunakan bagi web dengan URL berisi value. @PathVariable juga memudahkan user untuk melakukan navigasi ke suatu page web tertentu. 
----
-### What I did not understand
-[] Implementasi dan cara kerja Maven
-[] Detail cara kerja spring boot dan implementasinya di Github
----
 
 ## Tutorial 2
 **1. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom&noTelepon=081xxx​Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi**
 
 Muncul Whitelabel Error Page Service Error 500. Hal tersebut terjadi karena file HTML untuk add-hotel belum dibuat. Error tersebut diakibatkan karena method addHotel yang dipanggil oleh url /hotel/add tidak bisa melakukan return "add-hotel" karena belum ada template add-hotel. 
-
 
 **2. Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa?Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat?**
 
