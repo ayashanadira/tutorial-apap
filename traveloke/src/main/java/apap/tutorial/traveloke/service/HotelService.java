@@ -12,6 +12,7 @@ public interface HotelService {
     List<HotelModel> getHotelList();
 
     // Method untuk mendapatkan data sebuah hotel berdasarkan id hotel
+
     HotelModel getHotelByIdHotel(Long idHotel);
 
     // Method untuk update hotel
@@ -22,4 +23,10 @@ public interface HotelService {
 
     // Method untuk menghapus data sebuah hotel berdasarkan id hotel
     void deleteHotel(HotelModel hotel);
+
+    HotelModel getHotelByIdHotel(String idHotel);
+
+    // Method untuk menghapus data sebuah hotel berdasarkan id hotel
+    public int deleteHotelByIdHotel(String idHotel);
+
 }
