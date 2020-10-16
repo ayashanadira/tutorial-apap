@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Change Kamar</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<h3>Change Data Kamar</h3>
-<form th:action="@{/kamar/change}" th:object="${kamar}" method="POST">
-    <input type="hidden" th:field="*{noKamar}"/>
-    Nama Kamar: <br>
-    <input type="text" name="namaKamar" th:value="*{namaKamar}"/>
-    <br><br>
-    Tipe : <br>
-    <input type="text" name="tipe" th:value="*{tipe}"/>
-    <br><br>
-    Kapasitas kamar: <br>
-    <input type="number" name="kapasitasKamar" th:value="*{kapasitasKamar}"/>
-    <br><br>
-    Hotel : <br>
-    <input type="number" name="hotel" th:value="*{hotel}"/>
-    <br><br>
+    <nav th:replace="fragments/fragment :: navbar (pagename='Change Kamar')"></nav>
+    <h3>Change Data Kamar</h3>
+    <form th:action="@{/kamar/change}" th:object="${kamar}" method="POST">
+        <input type="hidden" th:field="*{noKamar}"/>
+        Nama Kamar: <br>
+        <input type="text" name="namaKamar" th:value="*{namaKamar}"/>
+        <br><br>
+        Tipe : <br>
+        <input type="text" name="tipe" th:value="*{tipe}"/>
+        <br><br>
+        Kapasitas kamar: <br>
+        <input type="number" name="kapasitasKamar" th:value="*{kapasitasKamar}"/>
+        <br><br>
+        Hotel : <br>
+        <input type="number" name="hotel" th:value="*{hotel}"/>
+        <br><br>
 
-    <button type="submit" value="submit">Submit</button>
-</form>
+        <button type="submit" value="submit">Submit</button>
+    </form>
 </body>
 </html>

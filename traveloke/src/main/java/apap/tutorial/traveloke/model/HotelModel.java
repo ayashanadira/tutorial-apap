@@ -31,23 +31,23 @@ public class HotelModel implements Serializable{
     private List<KamarModel> listKamar;
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public String getNamaHotel() {
-        return namaHotel;
+        return  this.namaHotel;
     }
 
     public List<KamarModel> getListKamar() {
-        return listKamar;
+        return this.listKamar;
     }
 
     public String getAlamat() {
-        return alamat;
+        return this.alamat;
     }
 
     public Integer getNomorTelepon() {
-        return nomorTelepon;
+        return this.nomorTelepon;
     }
 
     public void setId(Long id) {
@@ -59,7 +59,7 @@ public class HotelModel implements Serializable{
     }
 
     public void setListKamar(List<KamarModel> listKamar) {
-        listKamar = listKamar;
+        this.listKamar = listKamar;
     }
 
     public void setAlamat(String alamat) {

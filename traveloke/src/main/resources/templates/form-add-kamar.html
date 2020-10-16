@@ -3,25 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Add Kamar</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<h3>Tambah Kamar</h3>
-<form th:action="@{/kamar/add}" th:object="${kamar}" method="POST">
-    <input type="hidden" th:field="*{hotel}"/>
-    Nama Kamar: <br>
-    <input type="text" name="namaKamar"/>
-    <br>
-    Tipe Kamar: <br>
-    <select name="tipe">
-        <option value="0">Deluxe</option>
-        <option value="1">Executive</option>
-        <option value="2">President Suite</option>
-    </select>
-    <br>
-    Kapasitas Kamar: <br>
-    <input type="number" name="kapasitasKamar"/>
-    <br>
-    <button type="submit">Submit</button>
-</form>
+    <nav th:replace="fragments/fragment :: navbar (pagename='Add Kamar')"></nav>
+    <h3>Tambah Kamar</h3>
+
+    <form th:action="@{/kamar/add}" th:object="${hotel}" method="POST">
+        <input type="hidden" th:field="*{id}"/>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Tipe Kamar</th>
+                    <th>Kapasitas Kamar</th>
+                    <th><button class="btn btn-primary btn-block" type="submit" value="submit" name="addform">
+                        Tambah</button></th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="kamar, iterationStatus : *{listKamar}">
+                <td><input type="text" class="form-control" th:field="*{listKamar[__${iterationStatus.index}__].namaKamar}"/></td>
+
+                <td><select class="form-control" th:field="*{listKamar[__${iterationStatus.index}__].tipe}">
+                    <option value="0">Deluxe</option>
+                    <option value="1">Executive</option>
+                    <option value="2">President Suite</option>
+                </select></td>
+
+                <td>
+                    <input class="form-control" type="number"
+                           th:field="*{listKamar[__${iterationStatus.index}__].kapasitasKamar}" min="0" />
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-block" type="submit" th:value="__${iterationStatus.index}__" name="deleteform">
+                    Hapus</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="col-md-2 float-right">
+            <button type="submit" value="submit" name="simpan" class="btn btn-success btn-block">Simpan</button>
+        </div>
+    </form>
 </body>
 </html>
+

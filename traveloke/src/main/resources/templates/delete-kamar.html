@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete Hotel</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<h2 th:text="'Kamar nomor ' + ${noKamar} + ' berhasil dihapus.'"></h2>
-<a href="/">Home</a>
+    <nav th:replace="fragments/fragment :: navbar (pagename='Delete Kamar')"></nav>
+    <h2 th:text="${kamarCount} + ' kamar telah dihapus.'"></h2>
 </body>
 </html>

@@ -92,3 +92,22 @@ FetchType.LAZY akan load data objek dari database yang di-fetch hanya disaat mem
 CascadeType.ALL berfungsi untuk memastikan bahwa data entitas yang mengalami operasi CRUD, maka entitas child juga akan mengikuti seluruh (ALL) perubahan yang terjadi pada entitas parent-nya. 
 
 FetchType.EAGER akan load keseluruhan data objek dari database yang di-fetch seawal mungkin. 
+
+
+---
+## Tutorial 4
+---
+**1.Jelaskan perbedaan th:include dan th:replace!**
+
+th:include akan memasukan elemen dengan atribut th:fragment tanpa memasukan tag dengan atribut th:fragment
+th:replace akan menggantikan (replace) tag beratribut th:replace (host tag) dengan elemen beratribut th:fragment
+
+**2.Jelaskan apa fungsi dari th:object!**
+th:object berfungsi untuk men-spesifikasi suatu objek yang terikat dengan data dari form/elemen HTML
+
+**3.Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?**
+*{} merupakan selection variable expression yang digunakan dalam kombinasi dengan th:object. ${} adalah variable expression yang akan melakukan evaluasi terhadap ekspresi di dalam {}.
+
+**4.Bagaimana kamu menyelesaikan latihan nomor 3?**
+Saya menambahkan atribut th:text pada elemen HTML dengan expression ${pagename}. Pada HTML yang mengimplementasikan kode fragment tersebut, saya akan mendefinisikan pagename dengan judul halaman HTML tersebut.
+
