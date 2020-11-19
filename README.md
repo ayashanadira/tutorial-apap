@@ -1,6 +1,8 @@
 # Tutorial APAP
 
 ## Authors*
+
+
 **Ayasha Nadira Widyadhana** - *1806191710* - *APAP-A*
 ---
 ## Tutorial 1
@@ -10,7 +12,6 @@ Saya belajar mengenai implementasi aplikasi Spring dan fitur-fitur pada Github
 ### Github
 
 **1. Apa itu Issue Tracker? Apa saja masalah yang dapat diselesaikan dengan Issue Tracker?**
-
 Issue tracker merupakan fitur Github sebagai tracker untuk project pada suatu repository. Setiap issues pada issue tracker yang dibuat oleh anggota tim dapat di-share dan menjadi wadah diskusi. Issue tracker dapat digunakan untuk tasks, bugs, perbaikan, atau pencatatan ide untuk improvement project. Masalah yang dapat diselesaikan issues adalah bugs, proses pull request, dan lainnya.
 
 **2. Apa perbedaan dari git merge dan git merge --squash?**
@@ -32,7 +33,6 @@ Library adalah kumpulan kode program atau method yang fokus pada task tertentu. 
 Maven merupakan tool untuk project management untuk Java-based project. Biasanya, Maven digunakan untuk projects build, mengatasi dependency, dan dokumentasi proyek. Dengan menggunakan maven, developer juga dapat mengintegrasikan projectnya dengan version control system seperti Git. Alternatif dari Maven adalah ANT dan Gradle.
 
 **6. Selain untuk pengembangan web, apa saja yang bisa dikembangkan dengan Spring framework?**
-
 Spring dapat digunakan untuk pengembangan aplikasi enterprise, aplikasi terkait big data, aplikasi keamanan, dan transaction management. 
 
 **7. Apa perbedaan dari @RequestParam dan @PathVariable? Kapan sebaiknya menggunakan @RequestParam atau @PathVariable?**
@@ -60,6 +60,7 @@ Hotel tidak akan bisa ditambahkan dan akan muncul page error dengan status Bad R
 **4. Jika Papa APAP ingin melihat Hotel dengan nama Papa APAP,link apa yang harus diakses?**
 
 http://localhost:8080/hotel/view?idHotel=1 dengan mengganti angka '1' pada link menjadi id Hotel Papa APAP. Jika kita tidak mengetahui id Hotel dan hanya nama hotelnya saja, maka kode untuk method detailHotel dapat ditambahkan RequestParam untuk nama Hotel dan menambahkan parameter required=false untuk RequestParam idHotel. Linknya hotel Papa APAP menjadi berikut : http://localhost:8080/hotel/view?namaHotel=Papa APAP
+Hotel tidak akan bisa ditambahkan dan akan muncul page error dengan status Bad Request 400. Hal tersebut karena pada link di pertanyaan nomor 3, tidak ada parameter nomor telepon. Parameter nomor telepon tersebut merupakan parameter yang sifatnya required pada RequestParam untuk "noTelepon" dan nomor telepon merupakan atribut yang wajib ada untuk construct objek HotelModel. 
 
 **5. Tambahkan 1 contoh Hotel lainnya sesukamu.Lalu cobalah untuk mengakses http://localhost:8080/hotel/viewall​ ,apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.**
 
@@ -92,7 +93,6 @@ FetchType.LAZY akan load data objek dari database yang di-fetch hanya disaat mem
 CascadeType.ALL berfungsi untuk memastikan bahwa data entitas yang mengalami operasi CRUD, maka entitas child juga akan mengikuti seluruh (ALL) perubahan yang terjadi pada entitas parent-nya. 
 
 FetchType.EAGER akan load keseluruhan data objek dari database yang di-fetch seawal mungkin. 
-
 
 ---
 ## Tutorial 4
