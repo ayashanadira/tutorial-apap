@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>View All Hotel</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<h2>Daftar Seluruh Hotel</h2>
-<div th:each ="hotel: ${listHotel}">
-
-    <h3 th:text="'Id Hotel: ' + ${hotel.id}"></h3>
-    <h3 th:text="'Nama Hotel: ' + ${hotel.namaHotel}"></h3>
-    <h3 th:text="'Alamat Hotel: ' + ${hotel.alamat}"></h3>
-    <h3 th:text="'Nomor Telepon: ' + ${hotel.nomorTelepon}"></h3>
-
-    <h3 th:text="'Id Hotel: ' + ${hotel.idHotel}"></h3>
-    <h3 th:text="'Nama Hotel: ' + ${hotel.namaHotel}"></h3>
-    <h3 th:text="'Alamat Hotel: ' + ${hotel.alamat}"></h3>
-    <h3 th:text="'Nomor Telepon: ' + ${hotel.noTelepon}"></h3>
-
-    <hr>
-</div>
+    <nav th:replace="fragments/fragment :: navbar (pagename='View All Hotel')"></nav>
+    <h2>Daftar Seluruh Hotel</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Hotel</th>
+                <th>Nama Hotel</th>
+                <th>Alamat Hotel</th>
+                <th>Nomor Telepon Hotel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="hotel : ${listHotel}">
+                <td th:text="${hotel.id}"></td>
+                <td th:text="${hotel.namaHotel}"></td>
+                <td th:text="${hotel.alamat}"></td>
+                <td th:text="${hotel.nomorTelepon}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

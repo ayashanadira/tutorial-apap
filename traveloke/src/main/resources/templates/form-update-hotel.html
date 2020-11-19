@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Update Data Hotel</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<h3>Change Data Hotel</h3>
-<form th:action="@{/hotel/change}" th:object="${hotel}" method="POST">
-    <input type="hidden" th:field="*{id}"/>
-    Nama Hotel: <br>
-    <input type="text" name="namaHotel" th:value="*{namaHotel}"/>
-    <br><br>
-    Alamat: <br>
-    <input type="text" name="alamat" th:value="*{alamat}"/>
-    <br><br>
-    Nomor Telepon: <br>
-    <input type="number" name="nomorTelepon" th:value="*{nomorTelepon}"/>
-    <br><br>
-    <button type="submit" value="submit">Submit</button>
-</form>
+    <nav th:replace="fragments/fragment :: navbar (pagename='Update Hotel')"></nav>
+    <h3>Change Data Hotel</h3>
+    <form th:action="@{/hotel/change}" th:object="${hotel}" method="POST">
+        <input type="hidden" th:field="*{id}"/>
+        Nama Hotel: <br>
+        <input type="text" name="namaHotel" th:value="*{namaHotel}"/>
+        <br><br>
+        Alamat: <br>
+        <input type="text" name="alamat" th:value="*{alamat}"/>
+        <br><br>
+        Nomor Telepon: <br>
+        <input type="number" name="nomorTelepon" th:value="*{nomorTelepon}"/>
+        <br><br>
+        <button type="submit" value="submit">Submit</button>
+    </form>
 </body>
 </html>
