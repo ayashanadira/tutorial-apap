@@ -98,7 +98,6 @@ FetchType.EAGER akan load keseluruhan data objek dari database yang di-fetch sea
 ## Tutorial 4
 ---
 **1.Jelaskan perbedaan th:include dan th:replace!**
-
 th:include akan memasukan elemen dengan atribut th:fragment tanpa memasukan tag dengan atribut th:fragment
 th:replace akan menggantikan (replace) tag beratribut th:replace (host tag) dengan elemen beratribut th:fragment
 
@@ -110,4 +109,23 @@ th:object berfungsi untuk men-spesifikasi suatu objek yang terikat dengan data d
 
 **4.Bagaimana kamu menyelesaikan latihan nomor 3?**
 Saya menambahkan atribut th:text pada elemen HTML dengan expression ${pagename}. Pada HTML yang mengimplementasikan kode fragment tersebut, saya akan mendefinisikan pagename dengan judul halaman HTML tersebut.
+
+
+---
+## Tutorial 5
+---
+**1.Apa itu Postman? Apa kegunaannya?**
+Postman adalah salah satu aplikasi/tools untuk melakukan pengujian API. Postman berfungsi sebagai REST Client untuk menjadi objek uji coba REST API. Karena fungsinya tersebut, Postman berperan penting dalam pengembangan suatu API.
+
+**2.Apa fungsi dari anotasi @JsonIgnorePropertis dan @JsonProperty?**
+@JsonIgnoreProperties adalah anotasi pada level class yang berfungsi untuk menandai suatu property/list of properties agar di-ignore. Sedangkan @JsonProperty adalah anotasi yang menentukan logical property yang digunakan paa proses serialization/deserialization JSON. @JsonProperty berfungsi untuk menandai method setter/getter non-standard untuk digunakan sesuai dengan JSON property. 
+
+**3.Apa kegunaan atribut WebClient?**
+WebClient berfungsi untuk melakukan HTTP request, dimana WebClient sendiri merupkan suatu klien yang bersifat non-blocking dan reaktif.
+
+**4.Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?**
+ResponseEntity berfungsi sebagai representasi HTTP response (termasuk elemen HTTP response seperti header, body, dan status) pada Spring. Sedangkan BindingResult adalah objek Spring yang mengandung hasil dari suatu prses validasi dan binding, termasuk mengandung suatu error yang kemungkinan terjadi. 
+
+
+
 
