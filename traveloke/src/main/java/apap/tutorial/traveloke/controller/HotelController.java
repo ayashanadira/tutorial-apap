@@ -64,18 +64,17 @@ public class HotelController {
         }
         return "delete-failed";
     }
-
-    @GetMapping("/hotel/view")
-    public String viewDetailHotel(@RequestParam(value = "idHotel") Long idHotel, Model model){
+    
+  @GetMapping("/hotel/view")
+    public String viewDetailHotel(@RequestParam(value = "idHotel") Long idHotel, Model model) {
         HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
-        if (hotel == null){
+        if (hotel == null) {
             return "hotel-not-found";
         }
         List<KamarModel> listKamar = kamarService.findAllKamarByIdHotel(idHotel);
+        boolean hasKamar = listKamar.size() > 0;
         model.addAttribute("hotel", hotel);
-        if (listKamar.isEmpty()) {
-            return "view-hotel-no-kamar";
-        }
+        model.addAttribute("hasKamar", hasKamar);
         model.addAttribute("listKamar", listKamar);
         return "view-hotel";
     }

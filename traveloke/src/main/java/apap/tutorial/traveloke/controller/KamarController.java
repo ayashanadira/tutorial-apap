@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.ArrayList;
 
 @Controller
 public class KamarController {
@@ -22,17 +25,43 @@ public class KamarController {
 
     @GetMapping("/kamar/add/{idHotel}")
     public String addKamarFormPage(@PathVariable Long idHotel, Model model){
+        List<KamarModel> temp = new ArrayList<KamarModel>();
         KamarModel kamar = new KamarModel();
+        temp.add(kamar);
         HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
-        kamar.setHotel(hotel);
-        model.addAttribute("kamar", kamar);
+        hotel.setListKamar(temp);
+        model.addAttribute("hotel", hotel);
         return "form-add-kamar";
     }
 
-    @PostMapping("/kamar/add")
-    public String addKamarSubmit(@ModelAttribute KamarModel kamar, Model model){
-        kamarService.addKamar(kamar);
-        model.addAttribute("kamar", kamar);
+
+    @PostMapping(value = "/kamar/add", params = {"addform"})
+    public String addKamarTambahForm(@ModelAttribute HotelModel hotel, Model model){
+        if(hotel.getListKamar().size() == 0){
+            List<KamarModel> temp = new ArrayList<KamarModel>();
+            hotel.setListKamar(temp);
+        }
+        KamarModel kamar = new KamarModel();
+        hotel.getListKamar().add(kamar);
+        model.addAttribute("hotel", hotel);
+        return "form-add-kamar";
+    }
+
+    @PostMapping(value = "/kamar/add", params = {"deleteform"})
+    public String addKamarHapusForm(@ModelAttribute HotelModel hotel, Model model, final HttpServletRequest httpreq){
+        int noRowForm = Integer.valueOf(httpreq.getParameter("deleteform"));
+        hotel.getListKamar().remove(noRowForm);
+        model.addAttribute("hotel", hotel);
+        return "form-add-kamar";
+    }
+
+    @PostMapping(value = "/kamar/add", params = {"simpan"})
+    public String addMultiKamarSubmit(@ModelAttribute HotelModel hotel, Model model){
+        for (KamarModel kamar : hotel.getListKamar()){
+            kamar.setHotel(hotel);
+            kamarService.addKamar(kamar);
+        }
+        model.addAttribute("kamarCount", hotel.getListKamar().size());
         return "add-kamar";
     }
 
@@ -47,11 +76,15 @@ public class KamarController {
     public String changeKamarSubmit(@ModelAttribute KamarModel kamar, Model model){
         KamarModel updatedKamar = kamarService.updateKamar(kamar);
         model.addAttribute("kamar", kamar);
-        return "add-kamar";
+        return "change-kamar";
     }
-    @GetMapping("/kamar/delete/{noKamar}")
-    public String deleteKamarSubmit(@PathVariable Long noKamar, Model model){
-        kamarService.deleteKamar(kamarService.getKamarByNoKamar(noKamar));
+
+    @PostMapping("/kamar/delete")
+    public String deleteKamarFormSubmit(@ModelAttribute HotelModel hotel, Model model){
+        model.addAttribute("kamarCount", hotel.getListKamar().size());
+        for(KamarModel kamar : hotel.getListKamar()){
+            kamarService.deleteKamar(kamar);
+        }
         return "delete-kamar";
     }
 }

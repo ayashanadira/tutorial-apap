@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete Hotel Failed</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<h2 th:text="'Hotel tidak bisa dihapus karena memiliki kamar'"></h2>
-<a href="/">Home</a>
+    <nav th:replace="fragments/fragment :: navbar (pagename='Delete Kamar Failed')"></nav>
+    <h2 th:text="'Hotel tidak bisa dihapus karena memiliki kamar'"></h2>
 </body>
 </html>
