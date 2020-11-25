@@ -1,8 +1,6 @@
 # Tutorial APAP
 
 ## Authors*
-
-
 **Ayasha Nadira Widyadhana** - *1806191710* - *APAP-A*
 ---
 ## Tutorial 1
@@ -12,6 +10,7 @@ Saya belajar mengenai implementasi aplikasi Spring dan fitur-fitur pada Github
 ### Github
 
 **1. Apa itu Issue Tracker? Apa saja masalah yang dapat diselesaikan dengan Issue Tracker?**
+
 Issue tracker merupakan fitur Github sebagai tracker untuk project pada suatu repository. Setiap issues pada issue tracker yang dibuat oleh anggota tim dapat di-share dan menjadi wadah diskusi. Issue tracker dapat digunakan untuk tasks, bugs, perbaikan, atau pencatatan ide untuk improvement project. Masalah yang dapat diselesaikan issues adalah bugs, proses pull request, dan lainnya.
 
 **2. Apa perbedaan dari git merge dan git merge --squash?**
@@ -33,6 +32,7 @@ Library adalah kumpulan kode program atau method yang fokus pada task tertentu. 
 Maven merupakan tool untuk project management untuk Java-based project. Biasanya, Maven digunakan untuk projects build, mengatasi dependency, dan dokumentasi proyek. Dengan menggunakan maven, developer juga dapat mengintegrasikan projectnya dengan version control system seperti Git. Alternatif dari Maven adalah ANT dan Gradle.
 
 **6. Selain untuk pengembangan web, apa saja yang bisa dikembangkan dengan Spring framework?**
+
 Spring dapat digunakan untuk pengembangan aplikasi enterprise, aplikasi terkait big data, aplikasi keamanan, dan transaction management. 
 
 **7. Apa perbedaan dari @RequestParam dan @PathVariable? Kapan sebaiknya menggunakan @RequestParam atau @PathVariable?**
@@ -60,7 +60,6 @@ Hotel tidak akan bisa ditambahkan dan akan muncul page error dengan status Bad R
 **4. Jika Papa APAP ingin melihat Hotel dengan nama Papa APAP,link apa yang harus diakses?**
 
 http://localhost:8080/hotel/view?idHotel=1 dengan mengganti angka '1' pada link menjadi id Hotel Papa APAP. Jika kita tidak mengetahui id Hotel dan hanya nama hotelnya saja, maka kode untuk method detailHotel dapat ditambahkan RequestParam untuk nama Hotel dan menambahkan parameter required=false untuk RequestParam idHotel. Linknya hotel Papa APAP menjadi berikut : http://localhost:8080/hotel/view?namaHotel=Papa APAP
-Hotel tidak akan bisa ditambahkan dan akan muncul page error dengan status Bad Request 400. Hal tersebut karena pada link di pertanyaan nomor 3, tidak ada parameter nomor telepon. Parameter nomor telepon tersebut merupakan parameter yang sifatnya required pada RequestParam untuk "noTelepon" dan nomor telepon merupakan atribut yang wajib ada untuk construct objek HotelModel. 
 
 **5. Tambahkan 1 contoh Hotel lainnya sesukamu.Lalu cobalah untuk mengakses http://localhost:8080/hotel/viewall​ ,apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.**
 
@@ -94,7 +93,6 @@ CascadeType.ALL berfungsi untuk memastikan bahwa data entitas yang mengalami ope
 
 FetchType.EAGER akan load keseluruhan data objek dari database yang di-fetch seawal mungkin. 
 
----
 ## Tutorial 4
 ---
 **1.Jelaskan perbedaan th:include dan th:replace!**
@@ -111,3 +109,17 @@ th:object berfungsi untuk men-spesifikasi suatu objek yang terikat dengan data d
 **4.Bagaimana kamu menyelesaikan latihan nomor 3?**
 Saya menambahkan atribut th:text pada elemen HTML dengan expression ${pagename}. Pada HTML yang mengimplementasikan kode fragment tersebut, saya akan mendefinisikan pagename dengan judul halaman HTML tersebut.
 
+---
+## Tutorial 5
+---
+**1.Apa itu Postman? Apa kegunaannya?**
+Postman adalah salah satu aplikasi/tools untuk melakukan pengujian API. Postman berfungsi sebagai REST Client untuk menjadi objek uji coba REST API. Karena fungsinya tersebut, Postman berperan penting dalam pengembangan suatu API.
+
+**2.Apa fungsi dari anotasi @JsonIgnorePropertis dan @JsonProperty?**
+@JsonIgnoreProperties adalah anotasi pada level class yang berfungsi untuk menandai suatu property/list of properties agar di-ignore. Sedangkan @JsonProperty adalah anotasi yang menentukan logical property yang digunakan paa proses serialization/deserialization JSON. @JsonProperty berfungsi untuk menandai method setter/getter non-standard untuk digunakan sesuai dengan JSON property. 
+
+**3.Apa kegunaan atribut WebClient?**
+WebClient berfungsi untuk melakukan HTTP request, dimana WebClient sendiri merupkan suatu klien yang bersifat non-blocking dan reaktif.
+
+**4.Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?**
+ResponseEntity berfungsi sebagai representasi HTTP response (termasuk elemen HTTP response seperti header, body, dan status) pada Spring. Sedangkan BindingResult adalah objek Spring yang mengandung hasil dari suatu prses validasi dan binding, termasuk mengandung suatu error yang kemungkinan terjadi. 
