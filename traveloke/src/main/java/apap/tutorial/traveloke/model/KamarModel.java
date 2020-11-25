@@ -30,7 +30,7 @@ public class KamarModel implements Serializable{
     @NotNull
     @Column(name="kapasitasKamar", nullable = false)
     private Integer kapasitasKamar;
-
+  
     @ManyToOne(fetch = FetchType.EAGER,optional = false)
     @JoinColumn(name = "hotelId", referencedColumnName = "id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)

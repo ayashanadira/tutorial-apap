@@ -93,11 +93,10 @@ CascadeType.ALL berfungsi untuk memastikan bahwa data entitas yang mengalami ope
 
 FetchType.EAGER akan load keseluruhan data objek dari database yang di-fetch seawal mungkin. 
 
-
----
 ## Tutorial 4
 ---
 **1.Jelaskan perbedaan th:include dan th:replace!**
+
 th:include akan memasukan elemen dengan atribut th:fragment tanpa memasukan tag dengan atribut th:fragment
 th:replace akan menggantikan (replace) tag beratribut th:replace (host tag) dengan elemen beratribut th:fragment
 
@@ -109,7 +108,6 @@ th:object berfungsi untuk men-spesifikasi suatu objek yang terikat dengan data d
 
 **4.Bagaimana kamu menyelesaikan latihan nomor 3?**
 Saya menambahkan atribut th:text pada elemen HTML dengan expression ${pagename}. Pada HTML yang mengimplementasikan kode fragment tersebut, saya akan mendefinisikan pagename dengan judul halaman HTML tersebut.
-
 
 ---
 ## Tutorial 5
@@ -125,7 +123,3 @@ WebClient berfungsi untuk melakukan HTTP request, dimana WebClient sendiri merup
 
 **4.Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?**
 ResponseEntity berfungsi sebagai representasi HTTP response (termasuk elemen HTTP response seperti header, body, dan status) pada Spring. Sedangkan BindingResult adalah objek Spring yang mengandung hasil dari suatu prses validasi dan binding, termasuk mengandung suatu error yang kemungkinan terjadi. 
-
-
-
-
