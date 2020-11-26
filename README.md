@@ -31,7 +31,8 @@ Spring dapat digunakan untuk pengembangan aplikasi enterprise, aplikasi terkait 
 
 **7. Apa perbedaan dari @RequestParam dan @PathVariable? Kapan sebaiknya menggunakan @RequestParam atau @PathVariable?**
 
-@RequestParam digunakan untuk mendapatkan suatu value dari form data dan secara otomatis meng-assign value tersebut ke parameter dalam suatu method. @PathVariable digunakan untuk mendapatkan suatu value dari URL. @RequestParam cocok untuk web dengan proses query atau searching.@PathVariable cocok digunakan bagi web dengan URL berisi value. @PathVariable juga memudahkan user untuk melakukan navigasi ke suatu page web tertentu. 
+Parameter @RequestParam digunakan untuk mendapatkan suatu value dari form data dan secara otomatis meng-assign value tersebut ke parameter dalam suatu method. @PathVariable digunakan untuk mendapatkan suatu value dari URL. @RequestParam cocok untuk web dengan proses query atau searching.@PathVariable cocok digunakan bagi web dengan URL berisi value. @PathVariable juga memudahkan user untuk melakukan navigasi ke suatu page web tertentu. 
+
 ---
 ### What I did not understand
 [] Implementasi dan cara kerja Maven
