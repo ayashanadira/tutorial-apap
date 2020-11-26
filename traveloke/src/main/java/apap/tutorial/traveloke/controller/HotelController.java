@@ -22,10 +22,10 @@ public class HotelController {
     @Autowired
     private KamarService kamarService;
 
-    @GetMapping("/")
-    private String home(){
-        return "home";
-    }
+//    @GetMapping("/")
+//    private String home(){
+//        return "home";
+//    }
 
     @GetMapping("/hotel/add")
     public String addHotelFormPage(Model model){
@@ -64,8 +64,8 @@ public class HotelController {
         }
         return "delete-failed";
     }
-    
-  @GetMapping("/hotel/view")
+
+    @GetMapping("/hotel/view")
     public String viewDetailHotel(@RequestParam(value = "idHotel") Long idHotel, Model model) {
         HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
         if (hotel == null) {
