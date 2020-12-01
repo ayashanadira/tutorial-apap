@@ -44,6 +44,12 @@ public class UserController {
             model.addAttribute("pesan", "Password tidak valid. Password harus memiliki minimal 1 angka, 1 huruf, dan minimal 8 karakter");
             return "change-password-submit";
         }
+
+        if(newPassword.equals(oldPassword)){
+            model.addAttribute("pesan", "Password baru tidak boleh sama dengan password lama");
+            return "change-password-submit";
+        }
+
         UserModel user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         user.setPassword(newPassword);
         userService.addUser(user);
