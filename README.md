@@ -152,3 +152,48 @@ UUID (Universally Unique Identifier) adalah kombinasi 32 karakter string, dimana
 **4.Apa kegunaan class ​UserDetailsServiceImpl.java​? Mengapa harus ada class tersebut padahal kita sudah memiliki class​ UserRoleServiceImpl.java​?**
 
 UserDetailsServiceImpl.java berguna pada proses otentikasi user. Class ini mengimplementasi interface UserServiceDetail dari Spring Security. Class UserDetailsServiceImpl.java akan menghasilkan objek UserDetail, dimana objek tersebut akan mengandung informasi objek user dari database, otentikasi, dan otorisasi user sesuai role yang dimiliki oleh objek user. Sementara itu, UserServiceImpl.java adalah class untuk mengatur service dan mapping untuk UserModel. 
+
+---
+## Tutorial 7
+---
+**1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan.**
+
+Untuk latihan nomor 1, saya menambahkan condition pada kode input di file index.js di folder Item agar menampilkan checkbox ketika bernilai true saja (sudah di-checked) dan menyembunyikan/hidden checkbox jika bernilai false (belum di-checked)
+![image](https://user-images.githubusercontent.com/45852173/101056539-a9df3200-35bd-11eb-9cc3-e34c0d26db29.png)
+
+Untuk latihan nomor 2, saya membuat button "Clear favorites" yang akan muncul dengan kondisi ketika array favItems memiliki length lebih dari 0. Ketika di-click, button akan memanggil ClearFavoriteItems yang akan me-reset array favItems menjadi array kosong dengan kode pada gambar berikut:
+![image](https://user-images.githubusercontent.com/45852173/101053471-6800bc80-35ba-11eb-812c-a110d6608fad.png)
+
+Untuk latihan nomor 3, saya melakukan modifikasi pada handleItemClick, dimana saya menghilangkan kode else agar item yang berada pada array favItems tidak di-splice sehingga tidak terhapus ketika item pada section List Movies di-click. Berikut adalah kode handleItemClick:
+![image](https://user-images.githubusercontent.com/45852173/101054000-fe34e280-35ba-11eb-9196-a355883ee8b9.png)
+
+Untuk latihan nomor 4, saya membuat folder baru dengan nama Toggle pada folder components. Berikut adalah screenshot kode index.js terkait objek const Switch (objek untuk button toggle switch) pada folder toggle:
+![image](https://user-images.githubusercontent.com/45852173/101054475-84e9bf80-35bb-11eb-830a-1f61935cd98a.png)
+Selanjutnya, saya menyusun constructor props pada App.js dan men-declare state show=true. Saya juga membuat fungsi handleToggleSwtich sebagai event handler ketika toggle di-click oleh user. 
+![image](https://user-images.githubusercontent.com/45852173/101054577-9c28ad00-35bb-11eb-94d5-8ecda7361c59.png)
+Berikut adalah pengaplikasian Toggle Switch.  
+![image](https://user-images.githubusercontent.com/45852173/101054615-a5b21500-35bb-11eb-80ad-3e0fe4e83e04.png)
+
+Untuk latihan nomor 5, saya membuat folder baru dengan nama EmptyState pada folder components. Berikut adalah screenshot kode index.js terkait fungsi EmptyState yang menggunakan props:
+![image](https://user-images.githubusercontent.com/45852173/101055534-91bae300-35bc-11eb-8418-983ad730f687.png)
+Selanjutnya, saya melakukan modifikasi pada App.js dengan menambahkan condition dengan menggunakan EmptyState agar ketika array favItems memiliki length 0 maka EmptySpace yang akan di-return.
+![image](https://user-images.githubusercontent.com/45852173/101055597-a0a19580-35bc-11eb-915f-cc6260ebac33.png)
+
+**2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?**
+
+State adalah objek untuk menyimpan data dalam suatu component, dimana state digunakan di lingkup suatu component itu sendiri. Sedangkan props adalah objek yang dapat berfungsi untuk "melempar" dan menyimpan value data antar component. Perbedaan mendasar antara state dan props adalah scopenya, dimana state hanya relevan digunakan dalam suatu component, sedangkan props digunakan untuk berkomunikasi antar component.
+
+**3. Apa keuntungan menggunakan component (List, item) di react? Berikan contohnya!**
+
+Kode React bersifat reusable akibat adanya component. Pada component List dan Item, masing-masing component tersebut memiliki logika sendiri dan kode komponen tersebut dapat digunakan dimana saja dalam app React sehingga membantu developer untuk membuat aplikasi dengan UI konsisten. 
+
+**4. Menurut kamu, apa saja kelebihan menggunakan React dalam pengembangan web?**
+
+-React dapat membuat pembangunan web yang dinamis menjadi lebih mudah karena kodenya yang bersifat reusable dan menghasilkan lebih banyak fungsionalitas. 
+-Website yang menggunakan React akan memiliki kinerja yang lebih cepat karena adanya virtual DOM pada React. 
+-Website yang menggunakan React menjadi lebih SEO friendly dibanding menggunakan JavaScript biasa karena React dapat berjalan di server dan adanya penggunaan virtual DOM dalam rendering halaman web pada browser. 
+
+**5. Menurut kamu, apa saja kekurangan menggunakan React dalam pengembangan web?**
+
+-Dokumentasi React kurang lengkap karena teknologi React yang terus berkembang secara cepat.
+-React tidak compatible dengan browser versi lama, seperti contohnya Internet Explorer 8.
