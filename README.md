@@ -1,6 +1,6 @@
 # Tutorial APAP
 
-# Authors*
+## Authors*
 **Ayasha Nadira Widyadhana** - *1806191710* - *APAP-A*
 ---
 ## Tutorial 1
@@ -11,6 +11,7 @@ Saya belajar mengenai implementasi aplikasi Spring dan fitur-fitur pada Github
 **1. Apa itu Issue Tracker? Apa saja masalah yang dapat diselesaikan dengan Issue Tracker?**
 
 Issue tracker merupakan fitur Github sebagai tracker untuk project pada suatu repository. Setiap issues pada issue tracker yang dibuat oleh anggota tim dapat di-share dan menjadi wadah diskusi. Issue tracker dapat digunakan untuk tasks, bugs, perbaikan, atau pencatatan ide untuk improvement project. Masalah yang dapat diselesaikan issues adalah bugs, proses pull request, dan lainnya. 
+
 **2. Apa perbedaan dari git merge dan git merge --squash?**
 
 Perbedaan antara git merge dan git merge squash terletak pada commit. Pada git merge biasa, commit pada branch akan ditambahkan ke master/branch tujuan tanpa mengubah commit branch. Sementara pada git merge squash, commit yang ada pada branch akan dikombinasikan menjadi satu commit pada master/tujuan.
@@ -27,6 +28,7 @@ Library adalah kumpulan kode program atau method yang fokus pada task tertentu. 
 Maven merupakan tool untuk project management untuk Java-based project. Biasanya, Maven digunakan untuk projects build, mengatasi dependency, dan dokumentasi proyek. Dengan menggunakan maven, developer juga dapat mengintegrasikan projectnya dengan version control system seperti Git. Alternatif dari Maven adalah ANT dan Gradle.
 
 **6. Selain untuk pengembangan web, apa saja yang bisa dikembangkan dengan Spring framework?**
+
 Spring dapat digunakan untuk pengembangan aplikasi enterprise, aplikasi terkait big data, aplikasi keamanan, dan transaction management. 
 
 **7. Apa perbedaan dari @RequestParam dan @PathVariable? Kapan sebaiknya menggunakan @RequestParam atau @PathVariable?**
@@ -64,7 +66,7 @@ Pada page tersebut akan ditampilkan seluruh daftar dan informasi hotel yang sebe
 ---
 ## Tutorial 3
 ---
-**1. Pada class ​KamarDb​, terdapat ​method ​​findAllByHotelId​, apakah kegunaan dari ​method​ tersebut?**
+**1. Pada class KamarDb​, terdapat ​method ​​findAllByHotelId​, apakah kegunaan dari ​method​ tersebut?**
 
 Method yang akan mencari seluruh kamar yang ada pada suatu hotel dengan id tertentu. Seluruh pencarian akan di-return dalam bentuk list berisi objek KamarModel
 
@@ -146,4 +148,3 @@ UUID (Universally Unique Identifier) adalah kombinasi 32 karakter string, dimana
 **4.Apa kegunaan class ​UserDetailsServiceImpl.java​? Mengapa harus ada class tersebut padahal kita sudah memiliki class​ UserRoleServiceImpl.java​?**
 
 UserDetailsServiceImpl.java berguna pada proses otentikasi user. Class ini mengimplementasi interface UserServiceDetail dari Spring Security. Class UserDetailsServiceImpl.java akan menghasilkan objek UserDetail, dimana objek tersebut akan mengandung informasi objek user dari database, otentikasi, dan otorisasi user sesuai role yang dimiliki oleh objek user. Sementara itu, UserServiceImpl.java adalah class untuk mengatur service dan mapping untuk UserModel. 
-

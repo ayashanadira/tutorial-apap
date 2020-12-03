@@ -79,6 +79,7 @@ public class HotelController {
         return "view-hotel";
     }
 
+
     @RequestMapping("/hotel/viewall")
     public String listHotel(Model model){
         //Mendapatkan semua HotelModel
