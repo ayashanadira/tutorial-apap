@@ -171,7 +171,7 @@ Untuk latihan nomor 4, saya membuat folder baru dengan nama Toggle pada folder c
 ![image](https://user-images.githubusercontent.com/45852173/101054475-84e9bf80-35bb-11eb-830a-1f61935cd98a.png)
 Selanjutnya, saya menyusun constructor props pada App.js dan men-declare state show=true. Saya juga membuat fungsi handleToggleSwtich sebagai event handler ketika toggle di-click oleh user. 
 ![image](https://user-images.githubusercontent.com/45852173/101054577-9c28ad00-35bb-11eb-94d5-8ecda7361c59.png)
-Berikut adalah pengaplikasian Toggle Switch.  
+Berikut adalah pengaplikasian Toggle Switch.
 ![image](https://user-images.githubusercontent.com/45852173/101054615-a5b21500-35bb-11eb-80ad-3e0fe4e83e04.png)
 
 Untuk latihan nomor 5, saya membuat folder baru dengan nama EmptyState pada folder components. Berikut adalah screenshot kode index.js terkait fungsi EmptyState yang menggunakan props:
