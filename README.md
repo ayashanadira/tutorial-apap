@@ -213,14 +213,16 @@ Kode React bersifat reusable akibat adanya component. Pada component List dan It
 ## Tutorial 8
 ---
 **1. Ceritakan langkah - langkah yang kalian lakukan untuk ​solve ​LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?**
+
 Saya melakukan setState pada state namaHotel, alamat dan nomorTelepon melalui potongan kode berikut: 
 
 this.state = {
-    ...
+    //...
     namaHotel: "",
     alamat: "",
     nomorTelepon: ""
-}
+    //...
+    }
 
 Melalui kode tersebut, ketika tombol Create ditekan, value dari setiap field pada stete akan berubah menjadi "" (string).
 
