@@ -216,15 +216,15 @@ Kode React bersifat reusable akibat adanya component. Pada component List dan It
 
 Saya melakukan setState pada state namaHotel, alamat dan nomorTelepon melalui potongan kode berikut: 
 
-this.state = {
+this.state ={
     //...
     namaHotel: "",
     alamat: "",
     nomorTelepon: ""
     //...
-    }
+}
 
-Melalui kode tersebut, ketika tombol Create ditekan, value dari setiap field pada stete akan berubah menjadi "" (string).
+Melalui kode tersebut, ketika tombol Create ditekan, value dari setiap field pada stete akan berubah menjadi "" (string kosong).
 
 **2. Jelaskan fungsi dari ​async ​dan ​await​!**
 
