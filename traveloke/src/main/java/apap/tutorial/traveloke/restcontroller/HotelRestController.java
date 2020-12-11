@@ -22,9 +22,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000" )
 @RequestMapping("api/v1")
 public class HotelRestController {
-
+    
     @Autowired
     private HotelRestService hotelRestService;
 

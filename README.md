@@ -208,3 +208,47 @@ Kode React bersifat reusable akibat adanya component. Pada component List dan It
 
 -Dokumentasi React kurang lengkap karena teknologi React yang terus berkembang secara cepat.
 -React tidak compatible dengan browser versi lama, seperti contohnya Internet Explorer 8.
+
+---
+## Tutorial 8
+---
+**1. Ceritakan langkah - langkah yang kalian lakukan untuk ​solve ​LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?**
+Saya melakukan setState pada state namaHotel, alamat dan nomorTelepon melalui potongan kode berikut: 
+
+this.state = {
+    ...
+    namaHotel: "",
+    alamat: "",
+    nomorTelepon: ""
+}
+
+Melalui kode tersebut, ketika tombol Create ditekan, value dari setiap field pada stete akan berubah menjadi "" (string).
+
+**2. Jelaskan fungsi dari ​async ​dan ​await​!**
+
+async bertujuan untuk mengubah fungsi menjadi asynchronous, sehingga suatu fungsi dapat berjalan tanpa perlu adanya reload page ulang. await bertujuan untuk menunda jalannya suatu proses/fungsi asynchronous sampai sesuatu yang di-await selesai. pada tutorial ini, contoh await dan async adalah fungsi hanldeSubmitAddHotel dan await dalam fungsi tersebut adalah menunggu proses APIConfig selesai, baru fungsi async handleSubmitAddHotel dapat kembali dilanjutkan. 
+
+**3.Masukkan jawaban dari ​Screenshot ​yang diperintahkan di halaman 7​ pada Component Lifecyclepada pertanyaan ini.**
+
+Ketika localhost:3000 dibuka pertama kali, dimana shouldComponentUpdate() tidak ada.
+![Screenshot (56)](https://user-images.githubusercontent.com/45852173/101897364-02758700-3bdd-11eb-97c6-bdcb065eb689.png)
+
+Ketika localhost:3000 dibuka kedua kali, dimana shouldComponentUpdate() muncul namun belum me-return nilai boolean.
+![image](https://user-images.githubusercontent.com/45852173/101895903-bd505580-3bda-11eb-960c-67c07e3617cb.png)
+
+Ketika saya mencoba menambahkan return true pada fungsi shouldComponentUpdate()
+![image](https://user-images.githubusercontent.com/45852173/101895516-38fdd280-3bda-11eb-8009-fb3df84f6a30.png)
+
+
+**4. Jelaskan fungsi dari ​​componentDidMount, shouldComponentUpdate,componentDidUpdate, componentWillReceiveProps,componentWillUnmount.Notes : Penjelasan harus mencantumkan “kapan fungsi dipanggil” dan “​use case ​apa saja yang biasanya menggunakan ​lifecycle method ​tersebut”.**
+
+componentDidMount: Fungsi yang akan dieksekusi setelah render pada client side dan fungsi ini termasuk pada tahap mounting component lifecycle. 
+Karena fungsi ini akan dieksekusi setelah render pada client side, waktu pemanggilan fungsi adalah ketika render HTML pertama kali dilakukan di client side. Salah satu use case fungsi ini adalah untuk melakukan update state agar mentrigger fungsi lain dalam component lifecycle. 
+
+shouldComponentUpdate: Fungsi yang menandakan dan memberitahu react apakah suatu komponen terpengaruh current change state atau props dan memberitahu apakah komponen yang terpengaruh tsb perlu diupdate atau tidak. Fungsi ini akan me-return boolean value dengan default value adalah true. Waktu pemanggilan fungsi ini saat adanya update komponen atau perubahan state/props. Salah satu use case fungsi ini adalah ketika ada update komponen
+
+componentDidUpdate: Fungsi yang meng-handle hal-hal eksternal dari environment React. Contoh hal eksternal tsb adalah browser atau API. Waktu pemanggilan fungsi ini ketika suatu komponen mengalami update dan proses rendering selesai dilakukan. Salah satu use case fungsi ini adalah ketika terdapat update komponen
+
+componentWillReceiveProps: Fungsi yang menandakan dan memberitahu react terdapat perubahan pada component with props. Waktu pemanggilan fungsi ini setelah suatu props mengalami update dan sebelum render. Salah satu use case fungsi ini adalah ketika perubahan state/props dilakukan.
+
+componentWillUnmount: Fungsi ini digunakan pada saat action yang berkaitan dengan delete/cancel/clean (contoh: menghapus/membatalkan sesuatu). Waktu pemanggilan fungsi ini setelah suatu component di-unmounting dari dom react. Salah satu use case fungsi ini adalah ketika ingin menghapus suatu komponen yang didefinisikan di componentDidMount. 
